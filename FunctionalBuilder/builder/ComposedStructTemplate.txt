@@ -1,0 +1,24 @@
+public struct Composed[<NUM>]<Input,[<TYPES>]> : ComposeType {
+
+[<FUNCTION_VARS>]
+
+[<COMPOSE_FUNC>]
+
+    public var pure : Input throws -> ([<TYPES>]) {
+        return { (input : Input) in
+            let result = (
+[<COMPOSE_RESULTS>]
+            )
+            let errors = (
+                [
+[<RESULT_COLLECT>]
+                ] as [ComposeResultType]
+            ).flatMap { $0.error }
+            
+            if errors.count > 0 { throw ComposeError(errors)}
+            return (
+[<RESULT_COLLECT_VALUE>]
+            )
+        }
+    }
+}

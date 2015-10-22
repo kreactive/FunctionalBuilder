@@ -1,0 +1,7 @@
+public func <&><Input,[<TYPES>],U>(a : Composed[<NUM>]<Input,[<TYPES>]>, b : Input throws -> U) -> Composed[<NEXT_NUM>]<Input,[<TYPES>],U> {
+    return a.compose(b)
+}
+
+public func <&><Input,[<TYPES>],U : ComposeType,V where U.Input == Input, U.Output == V>(a : Composed[<NUM>]<Input,[<TYPES>]>, z : U) -> Composed[<NEXT_NUM>]<Input,[<TYPES>],V> {
+    return a.compose(z.pure)
+}

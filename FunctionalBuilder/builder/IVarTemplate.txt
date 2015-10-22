@@ -1,0 +1,1 @@
+    let [<IVAR_NAME>] : (Input) throws -> [<IVAR_TYPE>]
