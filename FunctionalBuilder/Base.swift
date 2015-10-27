@@ -5,7 +5,7 @@
 //  Created by Antoine Palazzolo on 22/10/15.
 //  Copyright © 2015 Kreactive. All rights reserved.
 //
-enum ComposeError : ErrorType {
+public enum ComposeError : ErrorType {
     case Error([ErrorType])
     init(_ errors : [ErrorType]) {
         self = ComposeError.Error(errors)
