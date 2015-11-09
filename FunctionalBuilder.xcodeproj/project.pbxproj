@@ -30,7 +30,7 @@
 		719B49E11BD8E0DE00612E79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		719B49E71BD8E0EE00612E79 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		719B49EA1BD8E18600612E79 /* ComposedStructTemplate.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ComposedStructTemplate.txt; sourceTree = "<group>"; };
-		719B49EB1BD8E18600612E79 /* ComposeNextTemplate.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ComposeNextTemplate.txt; sourceTree = "<group>"; };
+		719B49EB1BD8E18600612E79 /* ComposeAndNextTemplate.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ComposeAndNextTemplate.txt; sourceTree = "<group>"; };
 		719B49EC1BD8E18600612E79 /* ComposeResultTemplate.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ComposeResultTemplate.txt; sourceTree = "<group>"; };
 		719B49ED1BD8E18600612E79 /* IVarTemplate.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = IVarTemplate.txt; sourceTree = "<group>"; };
 		719B49EE1BD8E18600612E79 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				719B49EA1BD8E18600612E79 /* ComposedStructTemplate.txt */,
-				719B49EB1BD8E18600612E79 /* ComposeNextTemplate.txt */,
+				719B49EB1BD8E18600612E79 /* ComposeAndNextTemplate.txt */,
 				719B49EC1BD8E18600612E79 /* ComposeResultTemplate.txt */,
 				719B49ED1BD8E18600612E79 /* IVarTemplate.txt */,
 				719B49EE1BD8E18600612E79 /* main.swift */,

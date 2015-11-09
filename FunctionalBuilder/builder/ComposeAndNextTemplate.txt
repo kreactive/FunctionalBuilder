@@ -1,0 +1,3 @@
+    public func and<T[<NEXT_NUM>]>(f[<NEXT_NUM>]: Input throws -> T[<NEXT_NUM>]) -> Composed[<NEXT_NUM>]<Input,[<TYPES>],T[<NEXT_NUM>]> {
+        return Composed[<NEXT_NUM>]([<COMPOSE_CURRENT_PARAMS>], f[<NEXT_NUM>] : f[<NEXT_NUM>])
+    }

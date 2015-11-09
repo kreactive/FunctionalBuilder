@@ -54,6 +54,8 @@ extension ComposeType {
     }
 }
 
+// and operator
+
 infix operator <&> { associativity left precedence 150 }
 
 public func <&><Input,A,B>(a : Input throws -> A, b : Input throws -> B) -> Composed2<Input,A,B> {

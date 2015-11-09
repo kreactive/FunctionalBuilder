@@ -29,7 +29,7 @@ let numRange = 2...maxCompose
 
 let structTemplate = try! String(contentsOfFile: templateDirectory.stringByAppendingPathComponent("ComposedStructTemplate.txt"))
 let ivarTemplate = try! String(contentsOfFile: templateDirectory.stringByAppendingPathComponent("IVarTemplate.txt"))
-let composeNextTemplate = try! String(contentsOfFile: templateDirectory.stringByAppendingPathComponent("ComposeNextTemplate.txt"))
+let composeNextTemplate = try! String(contentsOfFile: templateDirectory.stringByAppendingPathComponent("ComposeAndNextTemplate.txt"))
 let composeResultTemplate = try! String(contentsOfFile: templateDirectory.stringByAppendingPathComponent("ComposeResultTemplate.txt"))
 let composeResultCollectTemplate = try! String(contentsOfFile: templateDirectory.stringByAppendingPathComponent("ResultCollectTemplate.txt"))
 let operatorFunctionTemplate = try! String(contentsOfFile: templateDirectory.stringByAppendingPathComponent("OperatorFunctionTemplate.txt"))

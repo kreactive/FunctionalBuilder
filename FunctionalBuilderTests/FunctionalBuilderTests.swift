@@ -29,7 +29,7 @@ class FunctionalBuilderTests: XCTestCase {
     
     func testComposeProtocol() {
         let f1 = {(v : String) -> Int? in return Int(v)}
-        let compose2 = f1 <&> Other()
-        let compose3 = compose2 <&> Other()
+        let compose = f1 <&> Other() <&> Other()
+        let _ = try? compose.pure("2")
     }
 }
