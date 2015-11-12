@@ -6,8 +6,8 @@
 //
 //
 public struct ComposeError : ErrorType {
-    var underlyingErrors : [ErrorType]
-    init(_ content : [ErrorType]) {
+    public var underlyingErrors : [ErrorType]
+    public init(_ content : [ErrorType]) {
         self.underlyingErrors = content
     }
 }
