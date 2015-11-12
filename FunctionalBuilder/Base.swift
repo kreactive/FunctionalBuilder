@@ -3,12 +3,12 @@
 //  FunctionalBuilder
 //
 //  Created by Antoine Palazzolo on 22/10/15.
-//  Copyright © 2015 Kreactive. All rights reserved.
 //
-public enum ComposeError : ErrorType {
-    case Error([ErrorType])
-    init(_ errors : [ErrorType]) {
-        self = ComposeError.Error(errors)
+//
+public struct ComposeError : ErrorType {
+    var underlyingErrors : [ErrorType]
+    init(_ content : [ErrorType]) {
+        self.underlyingErrors = content
     }
 }
 

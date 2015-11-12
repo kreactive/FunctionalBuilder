@@ -3,7 +3,7 @@
 //  FunctionalBuilderTests
 //
 //  Created by Antoine Palazzolo on 22/10/15.
-//  Copyright © 2015 Kreactive. All rights reserved.
+//
 //
 
 import XCTest

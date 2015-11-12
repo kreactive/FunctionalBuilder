@@ -3,7 +3,7 @@
 //  FunctionalBuilder
 //
 //  Created by Antoine Palazzolo on 21/10/15.
-//  Copyright © 2015 Kreactive. All rights reserved.
+//
 //
 
 import Foundation
