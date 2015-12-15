@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0059A82D1C201B7D00EB59BD /* FunctionalBuilder WatchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 0059A82C1C201B7D00EB59BD /* FunctionalBuilder WatchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0059A8331C201C3500EB59BD /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719B49E71BD8E0EE00612E79 /* Base.swift */; };
+		0059A8341C201C3500EB59BD /* Composers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C454941BD9116500A4DB48 /* Composers.swift */; };
 		719B49E01BD8E0DE00612E79 /* FunctionalBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 719B49DF1BD8E0DE00612E79 /* FunctionalBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		719B49E81BD8E0EE00612E79 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719B49E71BD8E0EE00612E79 /* Base.swift */; };
 		71C454951BD9116500A4DB48 /* Composers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C454941BD9116500A4DB48 /* Composers.swift */; };
@@ -25,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0059A82A1C201B7D00EB59BD /* FunctionalBuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FunctionalBuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0059A82C1C201B7D00EB59BD /* FunctionalBuilder WatchOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FunctionalBuilder WatchOS.h"; sourceTree = "<group>"; };
+		0059A82E1C201B7D00EB59BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		719B49DC1BD8E0DE00612E79 /* FunctionalBuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FunctionalBuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		719B49DF1BD8E0DE00612E79 /* FunctionalBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunctionalBuilder.h; sourceTree = "<group>"; };
 		719B49E11BD8E0DE00612E79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,6 +49,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0059A8261C201B7D00EB59BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		719B49D81BD8E0DE00612E79 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -61,11 +74,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0059A82B1C201B7D00EB59BD /* FunctionalBuilder WatchOS */ = {
+			isa = PBXGroup;
+			children = (
+				0059A82C1C201B7D00EB59BD /* FunctionalBuilder WatchOS.h */,
+				0059A82E1C201B7D00EB59BD /* Info.plist */,
+			);
+			path = "FunctionalBuilder WatchOS";
+			sourceTree = "<group>";
+		};
 		719B49D21BD8E0DE00612E79 = {
 			isa = PBXGroup;
 			children = (
 				719B49DE1BD8E0DE00612E79 /* FunctionalBuilder */,
 				71DC994B1BD9249D001D4BFE /* FunctionalBuilderTests */,
+				0059A82B1C201B7D00EB59BD /* FunctionalBuilder WatchOS */,
 				719B49DD1BD8E0DE00612E79 /* Products */,
 				71C454961BD913C900A4DB48 /* Generated source */,
 			);
@@ -76,6 +99,7 @@
 			children = (
 				719B49DC1BD8E0DE00612E79 /* FunctionalBuilder.framework */,
 				71DC994A1BD9249D001D4BFE /* FunctionalBuilderTests.xctest */,
+				0059A82A1C201B7D00EB59BD /* FunctionalBuilder.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,6 +149,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0059A8271C201B7D00EB59BD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0059A82D1C201B7D00EB59BD /* FunctionalBuilder WatchOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		719B49D91BD8E0DE00612E79 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -136,6 +168,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0059A8291C201B7D00EB59BD /* FunctionalBuilder WatchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0059A8311C201B7D00EB59BD /* Build configuration list for PBXNativeTarget "FunctionalBuilder WatchOS" */;
+			buildPhases = (
+				0059A8321C201BAC00EB59BD /* Generate Source */,
+				0059A8251C201B7D00EB59BD /* Sources */,
+				0059A8261C201B7D00EB59BD /* Frameworks */,
+				0059A8271C201B7D00EB59BD /* Headers */,
+				0059A8281C201B7D00EB59BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FunctionalBuilder WatchOS";
+			productName = "FunctionalBuilder WatchOS";
+			productReference = 0059A82A1C201B7D00EB59BD /* FunctionalBuilder.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		719B49DB1BD8E0DE00612E79 /* FunctionalBuilder */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 719B49E41BD8E0DE00612E79 /* Build configuration list for PBXNativeTarget "FunctionalBuilder" */;
@@ -183,6 +234,9 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Kreactive;
 				TargetAttributes = {
+					0059A8291C201B7D00EB59BD = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					719B49DB1BD8E0DE00612E79 = {
 						CreatedOnToolsVersion = 7.1;
 					};
@@ -205,11 +259,19 @@
 			targets = (
 				719B49DB1BD8E0DE00612E79 /* FunctionalBuilder */,
 				71DC99491BD9249D001D4BFE /* FunctionalBuilderTests */,
+				0059A8291C201B7D00EB59BD /* FunctionalBuilder WatchOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0059A8281C201B7D00EB59BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		719B49DA1BD8E0DE00612E79 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,6 +289,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0059A8321C201BAC00EB59BD /* Generate Source */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/FunctionalBuilder/builder/ComposedStructTemplate.txt",
+				"$(SRCROOT)/FunctionalBuilder/builder/ComposeNextTemplate.txt",
+				"$(SRCROOT)/FunctionalBuilder/builder/ComposeResultTemplate.txt",
+				"$(SRCROOT)/FunctionalBuilder/builder/IVarTemplate.txt",
+				"$(SRCROOT)/FunctionalBuilder/builder/OperatorFunctionTemplate.txt",
+				"$(SRCROOT)/FunctionalBuilder/builder/ResultCollectTemplate.txt",
+				"$(SRCROOT)/FunctionalBuilder/builder/main.swift",
+			);
+			name = "Generate Source";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/Composers.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/bin/env xcrun --sdk macosx swift \"$SRCROOT/FunctionalBuilder/builder/main.swift\" -composeCount 10 -targetFile \"$BUILT_PRODUCTS_DIR/Composers.swift\" -templateDirectory \"$SRCROOT/FunctionalBuilder/builder\"";
+			showEnvVarsInLog = 0;
+		};
 		719B49F21BD8E23B00612E79 /* Generate source */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,6 +338,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0059A8251C201B7D00EB59BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0059A8331C201C3500EB59BD /* Base.swift in Sources */,
+				0059A8341C201C3500EB59BD /* Composers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		719B49D71BD8E0DE00612E79 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -281,6 +375,46 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0059A82F1C201B7D00EB59BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "FunctionalBuilder WatchOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.digischool.FunctionalBuilder-WatchOS";
+				PRODUCT_NAME = FunctionalBuilder;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		0059A8301C201B7D00EB59BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "FunctionalBuilder WatchOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.digischool.FunctionalBuilder-WatchOS";
+				PRODUCT_NAME = FunctionalBuilder;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
 		719B49E21BD8E0DE00612E79 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -432,6 +566,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0059A8311C201B7D00EB59BD /* Build configuration list for PBXNativeTarget "FunctionalBuilder WatchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0059A82F1C201B7D00EB59BD /* Debug */,
+				0059A8301C201B7D00EB59BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		719B49D61BD8E0DE00612E79 /* Build configuration list for PBXProject "FunctionalBuilder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
