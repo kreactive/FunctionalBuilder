@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0059A8291C201B7D00EB59BD"
-               BuildableName = "FunctionalBuilder WatchOS.framework"
+               BuildableName = "FunctionalBuilder.framework"
                BlueprintName = "FunctionalBuilder WatchOS"
                ReferencedContainer = "container:FunctionalBuilder.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0059A8291C201B7D00EB59BD"
-            BuildableName = "FunctionalBuilder WatchOS.framework"
+            BuildableName = "FunctionalBuilder.framework"
             BlueprintName = "FunctionalBuilder WatchOS"
             ReferencedContainer = "container:FunctionalBuilder.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0059A8291C201B7D00EB59BD"
-            BuildableName = "FunctionalBuilder WatchOS.framework"
+            BuildableName = "FunctionalBuilder.framework"
             BlueprintName = "FunctionalBuilder WatchOS"
             ReferencedContainer = "container:FunctionalBuilder.xcodeproj">
          </BuildableReference>
