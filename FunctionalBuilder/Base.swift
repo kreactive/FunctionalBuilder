@@ -43,8 +43,8 @@ enum ComposeResult<T> : ComposeResultType {
 
 
 public protocol ComposeType {
-    typealias Output
-    typealias Input
+    associatedtype Output
+    associatedtype Input
     var pure : Input throws -> Output {get}
     func pureMap<T>(transform : Output throws -> T) -> Input throws -> T
 }
