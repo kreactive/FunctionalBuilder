@@ -9,10 +9,10 @@
 import Foundation
 
 
-func searchOption(name : String) -> String? {
-    for (index,arg) in NSProcessInfo.processInfo().arguments.enumerate() {
-        if name == arg && NSProcessInfo.processInfo().arguments.count >= index {
-            return NSProcessInfo.processInfo().arguments[index+1]
+func searchOption(_ name : String) -> String? {
+    for (index,arg) in ProcessInfo.processInfo.arguments.enumerated() {
+        if name == arg && ProcessInfo.processInfo.arguments.count >= index {
+            return ProcessInfo.processInfo.arguments[index+1]
         }
     }
     return nil
@@ -21,23 +21,23 @@ func searchOption(name : String) -> String? {
 
 let minRange = 3
 
-guard let templateDirectory : NSString = searchOption("-templateDirectory") else {fatalError("missing -templateDirectory option")}
-guard let maxCompose = (searchOption("-composeCount").flatMap({Int($0)})) where maxCompose >= minRange else {fatalError("missing or bad -composeCount value (should be int and >= \(minRange))")}
+guard let templateDirectory : NSString = (searchOption("-templateDirectory") as NSString?) else {fatalError("missing -templateDirectory option")}
+guard let maxCompose = (searchOption("-composeCount").flatMap({Int($0)})), maxCompose >= minRange else {fatalError("missing or bad -composeCount value (should be int and >= \(minRange))")}
 guard let output = searchOption("-targetFile") else {fatalError("missing -targetFile option")}
 
 let numRange = 2...maxCompose
 
-let structTemplate = try! String(contentsOfFile: templateDirectory.stringByAppendingPathComponent("ComposedStructTemplate.txt"))
-let ivarTemplate = try! String(contentsOfFile: templateDirectory.stringByAppendingPathComponent("IVarTemplate.txt"))
-let composeNextTemplate = try! String(contentsOfFile: templateDirectory.stringByAppendingPathComponent("ComposeAndNextTemplate.txt"))
-let composeResultTemplate = try! String(contentsOfFile: templateDirectory.stringByAppendingPathComponent("ComposeResultTemplate.txt"))
-let composeResultCollectTemplate = try! String(contentsOfFile: templateDirectory.stringByAppendingPathComponent("ResultCollectTemplate.txt"))
-let operatorFunctionTemplate = try! String(contentsOfFile: templateDirectory.stringByAppendingPathComponent("OperatorFunctionTemplate.txt"))
+let structTemplate = try! String(contentsOfFile: templateDirectory.appendingPathComponent("ComposedStructTemplate.txt"))
+let ivarTemplate = try! String(contentsOfFile: templateDirectory.appendingPathComponent("IVarTemplate.txt"))
+let composeNextTemplate = try! String(contentsOfFile: templateDirectory.appendingPathComponent("ComposeAndNextTemplate.txt"))
+let composeResultTemplate = try! String(contentsOfFile: templateDirectory.appendingPathComponent("ComposeResultTemplate.txt"))
+let composeResultCollectTemplate = try! String(contentsOfFile: templateDirectory.appendingPathComponent("ResultCollectTemplate.txt"))
+let operatorFunctionTemplate = try! String(contentsOfFile: templateDirectory.appendingPathComponent("OperatorFunctionTemplate.txt"))
 
 extension String {
-    mutating func replaceTag(tag : String, with : String) {
-        while let range = self.rangeOfString("[<\(tag)>]") {
-            self.replaceRange(range, with: with)
+    mutating func replaceTag(_ tag : String, with : String) {
+        while let range = self.range(of : "[<\(tag)>]") {
+            self.replaceSubrange(range, with: with)
         }
     }
 }
@@ -50,9 +50,9 @@ for num in numRange {
     var structT = structTemplate
     structT.replaceTag("NUM", with: String(num))
     let types = (1...num).map(String.init).map {"T\($0)"}
-    structT.replaceTag("TYPES", with: types.joinWithSeparator(","))
+    structT.replaceTag("TYPES", with: types.joined(separator: ","))
     
-    let ivars = types.enumerate().map {(name : "f\($0+1)", type : $1)}
+    let ivars = types.enumerated().map {(name : "f\($0+1)", type : $1)}
     
     let ivarsBuild = ivars.map { v -> String in
         var ivar = ivarTemplate
@@ -60,19 +60,19 @@ for num in numRange {
         ivar.replaceTag("IVAR_TYPE", with: v.type)
         return ivar
     }
-    structT.replaceTag("FUNCTION_VARS", with: ivarsBuild.joinWithSeparator("\n"))
+    structT.replaceTag("FUNCTION_VARS", with: ivarsBuild.joined(separator:"\n"))
     
     
     if num != numRange.last! {
         let nextNum = num+1
         var composeNext = composeNextTemplate
         composeNext.replaceTag("NEXT_NUM", with: String(nextNum))
-        composeNext.replaceTag("TYPES", with:  types.joinWithSeparator(","))
-        composeNext.replaceTag("COMPOSE_CURRENT_PARAMS", with:  ivars.map {"\($0.name) : \($0.name)"}.joinWithSeparator(", "))
+        composeNext.replaceTag("TYPES", with:  types.joined(separator:","))
+        composeNext.replaceTag("COMPOSE_CURRENT_PARAMS", with:  ivars.map {"\($0.name) : \($0.name)"}.joined(separator:", "))
         structT.replaceTag("COMPOSE_FUNC", with: composeNext)
         
         var operatorFunction = operatorFunctionTemplate
-        operatorFunction.replaceTag("TYPES", with: types.joinWithSeparator(","))
+        operatorFunction.replaceTag("TYPES", with: types.joined(separator: ","))
         operatorFunction.replaceTag("NUM", with: String(num))
         operatorFunction.replaceTag("NEXT_NUM", with: String(nextNum))
         operatorFuncs.append(operatorFunction)
@@ -86,15 +86,15 @@ for num in numRange {
         composeResult.replaceTag("IVAR_NAME", with: v.name)
         return composeResult
     }
-    structT.replaceTag("COMPOSE_RESULTS", with: composeResult.joinWithSeparator(",\n"))
+    structT.replaceTag("COMPOSE_RESULTS", with: composeResult.joined(separator: ",\n"))
     
-    let resultCollect = composeResult.enumerate().map { (index,_) -> String in
+    let resultCollect = composeResult.enumerated().map { (index,_) -> String in
         var resultCollect = composeResultCollectTemplate
         resultCollect.replaceTag("RESULT_INDEX", with: String(index))
         return resultCollect
     }
-    structT.replaceTag("RESULT_COLLECT", with: resultCollect.joinWithSeparator(",\n"))
-    structT.replaceTag("RESULT_COLLECT_VALUE", with: resultCollect.map{$0+".value"}.joinWithSeparator(",\n"))
+    structT.replaceTag("RESULT_COLLECT", with: resultCollect.joined(separator: ",\n"))
+    structT.replaceTag("RESULT_COLLECT_VALUE", with: resultCollect.map{$0+".value"}.joined(separator: ",\n"))
 
     structs.append(structT)
 }
@@ -102,7 +102,7 @@ for num in numRange {
 
 let all = structs+operatorFuncs
 
-let outputData = NSData(data: (all.joinWithSeparator("\n\n")).dataUsingEncoding(NSUTF8StringEncoding)!)
-outputData.writeToFile(output, atomically: true)
+let outputData = NSData(data: (all.joined(separator: "\n\n")).data(using: String.Encoding.utf8)!)
+outputData.write(toFile: output, atomically: true)
 
 

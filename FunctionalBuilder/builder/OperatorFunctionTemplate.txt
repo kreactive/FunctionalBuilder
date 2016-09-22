@@ -1,7 +1,7 @@
-public func <&><Input,[<TYPES>],U>(a : Composed[<NUM>]<Input,[<TYPES>]>, b : Input throws -> U) -> Composed[<NEXT_NUM>]<Input,[<TYPES>],U> {
+public func <&><Input,[<TYPES>],U>(a : Composed[<NUM>]<Input,[<TYPES>]>, b : @escaping (Input) throws -> U) -> Composed[<NEXT_NUM>]<Input,[<TYPES>],U> {
     return a.and(b)
 }
 
-public func <&><Input,[<TYPES>],U : ComposeType,V where U.Input == Input, U.Output == V>(a : Composed[<NUM>]<Input,[<TYPES>]>, z : U) -> Composed[<NEXT_NUM>]<Input,[<TYPES>],V> {
+public func <&><Input,[<TYPES>],U : ComposeType,V>(a : Composed[<NUM>]<Input,[<TYPES>]>, z : U) -> Composed[<NEXT_NUM>]<Input,[<TYPES>],V> where U.Input == Input, U.Output == V {
     return a.and(z.pure)
 }

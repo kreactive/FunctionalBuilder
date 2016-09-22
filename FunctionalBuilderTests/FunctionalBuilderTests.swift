@@ -22,7 +22,7 @@ class FunctionalBuilderTests: XCTestCase {
     }
     
     struct Other : ComposeType {
-        var pure : String throws -> String {
+        var pure : (String) throws -> String {
             return {$0+$0}
         }
     }
