@@ -4,7 +4,7 @@ public struct Composed[<NUM>]<Input,[<TYPES>]> : ComposeType {
 
 [<COMPOSE_FUNC>]
 
-    public var pure : Input throws -> ([<TYPES>]) {
+    public var pure : (Input) throws -> ([<TYPES>]) {
         return { (input : Input) in
             let result = (
 [<COMPOSE_RESULTS>]
